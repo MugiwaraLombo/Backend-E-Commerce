@@ -61,36 +61,36 @@ class Proveedor:
             print(f"{producto} no está en la lista de productos del proveedor.")
 
 # Ejemplo de uso y explicacion:
-if __name__ == "__main__":
-    proveedor = Proveedor("Proveedor Ejemplo", "Calle Falsa 123", "555-1234")
-    producto1 = Producto("Producto 1", 10.0, 0)
-    producto2 = Producto("Producto 2", 20.0, 0)
+#if __name__ == "__main__":
+    #proveedor = Proveedor("Proveedor Ejemplo", "Calle Falsa 123", "555-1234")
+    #producto1 = Producto("Producto 1", 10.0, 0)
+    #producto2 = Producto("Producto 2", 20.0, 0)
 
-    proveedor.agregar_producto(producto1, 50)
-    proveedor.agregar_producto(producto2, 30)
-    proveedor.eliminar_producto(producto1, 20)
-    proveedor.eliminar_producto(producto2, 30)
-    proveedor.eliminar_producto(producto1, 30)
+    #proveedor.agregar_producto(producto1, 50)
+    #proveedor.agregar_producto(producto2, 30)
+    #proveedor.eliminar_producto(producto1, 20)
+    #proveedor.eliminar_producto(producto2, 30)
+    #proveedor.eliminar_producto(producto1, 30)
 
 
-Explicación de la Funcionalidad
-Clase Producto:
+#Explicación de la Funcionalidad
+#Clase Producto:
 
-Métodos:
-incrementar_stock(cantidad: int): Incrementa el stock del producto en la cantidad especificada.
-decrementar_stock(cantidad: int): Decrementa el stock del producto en la cantidad especificada si es válida.
-Representación:
-__repr__(): Proporciona una representación legible del producto.
-Clase Proveedor:
+#Métodos:
+#incrementar_stock(cantidad: int): Incrementa el stock del producto en la cantidad especificada.
+#decrementar_stock(cantidad: int): Decrementa el stock del producto en la cantidad especificada si es válida.
+#Representación:
+#__repr__(): Proporciona una representación legible del producto.
 
-Propiedades:
-nombre, direccion, telefono: Información del proveedor.
-productos: Lista de productos asociados al proveedor.
-Métodos:
-agregar_producto(producto: Producto, cantidad: int): Agrega un producto al proveedor e incrementa su stock.
-eliminar_producto(producto: Producto, cantidad: int): Decrementa el stock del producto y lo elimina si el stock llega a cero.
-Ejemplo de Uso:
+#Clase Proveedor:
+#Propiedades:
+#nombre, direccion, telefono: Información del proveedor.
+#productos: Lista de productos asociados al proveedor.
+#Métodos:
+#agregar_producto(producto: Producto, cantidad: int): Agrega un producto al proveedor e incrementa su stock.
+#eliminar_producto(producto: Producto, cantidad: int): Decrementa el stock del producto y lo elimina si el stock llega a cero.
+#Ejemplo de Uso:
 
-Se muestra cómo crear un proveedor y productos.
-Se ilustra cómo agregar productos al proveedor y gestionar su stock.
-Se muestra cómo eliminar productos del proveedor y decrementar su stock.
+#Se muestra cómo crear un proveedor y productos.
+#Se ilustra cómo agregar productos al proveedor y gestionar su stock.
+#Se muestra cómo eliminar productos del proveedor y decrementar su stock.
