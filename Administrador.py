@@ -1,18 +1,15 @@
 class Administrador():
-    def __init__(self, nombre, correo, rol="Administrador"):
+    def __init__(self, nombre, correo, password):
         self.nombre = nombre
         self.correo = correo
-        self.rol = rol
+        self.__password = password
 
-    def asignar_rol(self, nuevo_rol):
-        self.rol = nuevo_rol
+    def get_password(self):
+        return self.__password
+    
+    def set_password(self, new_password):
+        self.__password = new_password
 
-    def mostrar_informacion(self):
-        print(f"Nombre: {self.nombre}")
-        print(f"Correo: {self.correo}")
-        print(f"Rol: {self.rol}")
-
-admin1 = Administrador(nombre="", correo="")
-admin1.mostrar_informacion()  
-admin1.asignar_rol("Superadministrador")
-admin1.mostrar_informacion() 
+    def __str__(self):
+        info = "nombre="+self.nombre+", correo="+self.correo
+        return info

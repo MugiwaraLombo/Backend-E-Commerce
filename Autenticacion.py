@@ -1,32 +1,33 @@
-# Definir una clase abstracta para la autenticación de usuarios
 from abc import ABC, abstractmethod
-class Autenticacion(ABC):
-    @abstractmethod
-    def __init__(self, usuario, contraseña):
-        self.usuario = usuario
-        self.contraseña = contraseña
-    
-    def autenticar_usuario(self):
-        return f'Usuario: {self.usuario}, Contraseña: {self.contraseña}'
-
 import smtplib
 from email.mime.text import MIMEText
+
+# Definir una clase abstracta para la autenticación de usuarios
+
+class Autenticacion(ABC):
+    @abstractmethod
+    def __init__(self, usuario, password):
+        self.usuario = usuario
+        self.password = password
+    
+    def autenticar_usuario(self):
+        return f'Usuario: {self.usuario}, password: {self.password}'
 
 # Implementar la clase Autenticacion
 
 class ImplementacionAutenticacion(Autenticacion):
-    def __init__(self, usuario, contraseña):
-        super().__init__(usuario, contraseña)
+    def __init__(self, usuario, password):
+        super().__init__(usuario, password)
         self.intentos_fallidos = 0
     
-    def autenticar_usuario(self, usuario, contraseña):
-        if self.usuario == usuario and self.contraseña == contraseña:
+    def autenticar_usuario(self, usuario, password):
+        if self.usuario == usuario and self.password == password:
             return f'Usuario autenticado: {self.usuario}'
         else:
             raise ValueError("Credenciales incorrectas")
     
-    def autenticacion_usuario(self, usuario, contraseña):  
-        if self.usuario == usuario and self.contraseña == contraseña:
+    def autenticacion_usuario(self, usuario, password):  
+        if self.usuario == usuario and self.password == password:
             return f'Usuario autenticado: {self.usuario}'
         else:
             self.intentos_fallidos += 1
@@ -85,7 +86,7 @@ class ImplementacionGestionProductos(GestionProductos):
 class GestionCarritoCompras(ABC):
     @abstractmethod
     def __init__(self, id_item, id_carrito):
-        self.id__item = id_item
+        self.id_item = id_item
         self.id_carrito = id_carrito
     
     def agregar_item_carrito(self):
@@ -105,20 +106,3 @@ class ImplementacionGestionCarritoCompras(GestionCarritoCompras):
             return "El carrito está vacío."
         else:
             return f'Contenido del carrito: {", ".join(self.carrito)}'
-        
-carrito_compras = ImplementacionGestionCarritoCompras()
-item1 = "Producto A"
-item2 = "Producto B"
-print(carrito_compras.agregar_item_carrito(item1))
-print(carrito_compras.agregar_item_carrito(item2))
-print(carrito_compras.listar_carrito())
-    
-    # Uso de las clases e interfaces definidas
-autenticacion = ImplementacionAutenticacion()
-autenticacion.autenticar_usuario("nombre_de_usuario", "contraseña")
-
-gestion_productos = ImplementacionGestionProductos()
-gestion_productos.listar_productos("Producto", "Precio", "Codigo")
-
-gestion_carrito_compras = ImplementacionGestionCarritoCompras()
-gestion_carrito_compras.agregar_item_carrito[]
