@@ -1,5 +1,5 @@
 class Producto():
-    def __init__(self, nombre_producto, precio, descripcion, imagen, categoria):
+    def __init__(self, nombre_producto : str, precio : float, descripcion : str, imagen, categoria : str):
         self.id_producto = "lo define la DB" #es auto incremental
         self.nombre = nombre_producto
         self.precio = precio

@@ -30,16 +30,16 @@ class Proveedor:
         self._telefono = telefono
         self._productos: List[Producto] = []
 
-    def nombre(self) -> str:
+    def get_nombre(self) -> str:
         return self._nombre
 
-    def direccion(self) -> str:
+    def get_direccion(self) -> str:
         return self._direccion
 
-    def telefono(self) -> str:
+    def get_telefono(self) -> str:
         return self._telefono
 
-    def productos(self) -> List[Producto]:
+    def get_productos(self) -> List[Producto]:
         return self._productos
 
     def agregar_producto(self, producto: Producto, cantidad: int) -> None:

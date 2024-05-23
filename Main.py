@@ -213,7 +213,7 @@ gestion_productos = ImplementacionGestionProductos()
 gestion_productos.listar_productos("Producto", "precio", "Codigo")
 
 gestion_carrito_compras = ImplementacionGestionCarritoCompras()
-gestion_carrito_compras.agregar_item_carrito[]
+gestion_carrito_compras.agregar_item_carrito()
 
 
 # Interfaz para interactuar con la base de datos
