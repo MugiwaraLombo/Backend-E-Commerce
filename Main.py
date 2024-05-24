@@ -12,10 +12,10 @@ class Usuario():
         self.contraseña = contraseña
         self.verificacion = verificacion
 
-class Cliente():
+class Cliente(Usuario):
     def __init__(self, id_cliente, usuario, historial_compras, direccion, direccion_facturacion, forma_pago=None):
+        super().__init__(usuario.id_usuario, usuario.nombre, usuario.apellido, usuario.email, usuario.telefono, usuario.contraseña, usuario.verificacion)
         self.id_cliente = id_cliente
-        self.usuario = usuario
         self.historial_compras = historial_compras
         self.direccion = direccion
         self.direccion_facturacion = direccion_facturacion
