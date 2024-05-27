@@ -8,3 +8,4 @@ class Cliente(Usuario):
         self.forma_pago = forma_pago
         self.dni = dni
         self.id_cliente = id_cliente
+ 
