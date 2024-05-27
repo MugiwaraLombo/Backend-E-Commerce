@@ -1,6 +1,6 @@
 from Producto import Producto
 from Usuario import Usuario
-class CarritoCompras(Producto, Usuario):
+class CarritoCompras:
     def __init__(self, producto_agregado, cantidad_producto, costo_envio, codigo_postal, pais_region, estado_envio):
         self.id_compra = "lo define la DB" #es auto incremental
         self.lista_productos = [(producto_agregado, cantidad_producto)]

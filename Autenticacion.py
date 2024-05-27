@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import smtplib
 from email.mime.text import MIMEText
 
-# Definir una clase abstracta para la autenticación de usuarios
+# Definimos una clase abstracta para la autenticación de usuarios
 
 class Autenticacion(ABC):
     @abstractmethod
@@ -13,7 +13,7 @@ class Autenticacion(ABC):
     def autenticar_usuario(self):
         return f'Usuario: {self.usuario}, password: {self.password}'
 
-# Implementar la clase Autenticacion
+# Implementamos la clase Autenticacion
 
 class ImplementacionAutenticacion(Autenticacion):
     def __init__(self, usuario, password):
@@ -82,25 +82,25 @@ class NotificacionCuenta():
     def enviar_email(self, mensaje):
         servidor_smtp = 'smtp.example.com'  # Cambiar esto por el servidor SMTP que vamos a utilizar
         puerto_smtp = 587  # Puerto para TLS
-        remitente = 'tu_correo@example.com'  # Cambiar esto por mi dirección de correo electrónico
+        remitente = 'tu_correo@example.com'  # Cambiar esto por su dirección de correo electrónico
         destinatario = self.cliente_email
     
-    # Aca va mi nombre de usuario y contraseña de la cuenta de correo desde la que enviamos los correos
+    # Aca van el nombre de usuario y contraseña de la cuenta de correo desde la que enviamos los correos
         usuario_smtp = 'tu_usuario'
         contraseña_smtp = 'tu_contraseña'
 
-        # Construir el mensaje
+        # Construye el mensaje
         mensaje_completo = f"From: {remitente}\nTo: {destinatario}\nSubject: Notificación de cuenta\n\n{mensaje}"
 
         try:
-            # Iniciar la conexión al servidor SMTP
+            # Inicia la conexión al servidor SMTP
             server = smtplib.SMTP(servidor_smtp, puerto_smtp)
             server.starttls()  # Habilita la conexión segura
 
-            # Iniciar sesión en el servidor SMTP
+            # Inicia sesión en el servidor SMTP
             server.login(usuario_smtp, contraseña_smtp)
 
-            # Envíar el correo electrónico
+            # Envía el correo electrónico
             server.sendmail(remitente, destinatario, mensaje_completo)
             print(f"Correo electrónico enviado a {destinatario}: {mensaje}")
 
@@ -108,7 +108,7 @@ class NotificacionCuenta():
             print(f"Error al enviar el correo electrónico: {e}")
 
         finally:
-            # Cerrar la conexión al servidor SMTP
+            # Cierra la conexión al servidor SMTP
             server.quit()
 
 
@@ -151,25 +151,25 @@ class ConfirmacionesPedidos():
     def enviar_email(self, mensaje):
         servidor_smtp = 'smtp.example.com'  # Cambiar esto por el servidor SMTP que estémos utilizando
         puerto_smtp = 587  # Puerto para TLS
-        remitente = 'tu_correo@example.com'  # Cambia esto por mi dirección de correo electrónico
+        remitente = 'tu_correo@example.com'  # Cambia esto por la dirección de correo electrónico
         destinatario = self.cliente_email
 
-        # Aca va mi nombre de usuario y contraseña de la cuenta de correo desde la que enviamos los correos
+        # Aca van el nombre de usuario y contraseña de la cuenta de correo desde la que enviamos los correos
         usuario_smtp = 'tu_usuario'
         contraseña_smtp = 'tu_contraseña'
 
-        # Construir el mensaje
+        # Construye el mensaje
         mensaje_completo = f"From: {remitente}\nTo: {destinatario}\nSubject: Confirmación de Pedido\n\n{mensaje}"
 
         try:
-            # Iniciar la conexión al servidor SMTP
+            # Inicia la conexión al servidor SMTP
             server = smtplib.SMTP(servidor_smtp, puerto_smtp)
             server.starttls()  # Habilita la conexión segura
 
-            # Iniciar sesión en el servidor SMTP
+            # Inicia sesión en el servidor SMTP
             server.login(usuario_smtp, contraseña_smtp)
 
-            # Envíar el correo electrónico
+            # Envía el correo electrónico
             server.sendmail(remitente, destinatario, mensaje_completo)
             print(f"Correo electrónico de confirmación de pedido enviado a {destinatario}")
 
@@ -329,7 +329,7 @@ if __name__ == "__main__":
 
     boletines.enviar_boletin_informativo(destinatarios, asunto, contenido)
 
-# Definir una clase abstracta para la gestión de productos
+# Definimos una clase abstracta para la gestión de productos
 class GestionProductos(ABC):
     @abstractmethod
     def __init__(self, productos, precio, codigo):
@@ -340,7 +340,7 @@ class GestionProductos(ABC):
     def listar_productos(self):
        return f'Producto: {self.productos}, Precio: {self.precio}, Codigo: {self.codigo}'
 
-# Implementar la clase GestionProductos
+# Implementamos la clase GestionProductos
 class ImplementacionGestionProductos(GestionProductos):
     def __init__(self, productos, precio, codigo):
         super().__init__(productos, precio, codigo)
@@ -348,7 +348,7 @@ class ImplementacionGestionProductos(GestionProductos):
     def listar_productos(self):
         return f'Producto: {self.productos}, Precio: {self.precio}, Codigo: {self.codigo}'
 
-# Definir una clase abstracta para la gestión del carrito de compras
+# Definimos una clase abstracta para la gestión del carrito de compras
 class GestionCarritoCompras(ABC):
     @abstractmethod
     def __init__(self, id_item, id_carrito):
@@ -358,7 +358,7 @@ class GestionCarritoCompras(ABC):
     def agregar_item_carrito(self):
         self.carrito = []
 
-# Implementar la clase GestionCarritoCompras
+# Implementamos la clase GestionCarritoCompras
 class ImplementacionGestionCarritoCompras(GestionCarritoCompras):
     def __init__(self, id_item, id_carrito):
        super().__init__(id_item, id_carrito)
