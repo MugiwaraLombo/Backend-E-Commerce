@@ -53,22 +53,22 @@ class Factura:
 
 
 
-@app.route('/facturacion', methods=['GET'])
-def obtener_facturacion():
-    factura.actualizar_descuentos_y_total()
-    return jsonify(factura.to_dict())
+    @app.route('/facturacion', methods=['GET'])
+    def obtener_facturacion():
+        Factura.actualizar_descuentos_y_total()
+        return jsonify(Factura.to_dict())
 
-@app.route('/facturacion/descuento', methods=['POST'])
-def agregar_descuento():
-    data = request.get_json()
-    tipo = data.get('tipo')
-    monto = data.get('monto')
-    productos_aplicables = data.get('productos_aplicables')
+    @app.route('/facturacion/descuento', methods=['POST'])
+    def agregar_descuento():
+        data = request.get_json()
+        tipo = data.get('tipo')
+        monto = data.get('monto')
+        productos_aplicables = data.get('productos_aplicables')
 
-    factura.agregar_descuento(tipo, monto, productos_aplicables)
-    factura.actualizar_descuentos_y_total()
+        Factura.agregar_descuento(tipo, monto, productos_aplicables)
+        Factura.actualizar_descuentos_y_total()
 
-    return jsonify(factura.to_dict()), 201
+        return jsonify(Factura.to_dict()), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
