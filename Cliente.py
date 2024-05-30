@@ -1,11 +1,14 @@
 from Usuario import Usuario
-class Cliente(Usuario):
-    def __init__(self, nombre, apellido, mail, password, direccion : str, direccion_facturacion : str, forma_pago : str, telefono=None, verificacion=None, dni, id_cliente):
-        super().__init__(nombre, apellido, mail, password, telefono, verificacion)
+from Carrito import CarritoCompras
+class Cliente:
+    def __init__(self, usuario, direccion : str, direccion_facturacion : str, forma_pago : str, dni, id_cliente):
+        self.id_cliente = id_cliente
         self.historial_compras = [] #agregar funcion que conecte los datos del carrito de compras de un usuario a su historial
         self.direccion = direccion
         self.direccion_facturacion = direccion_facturacion
         self.forma_pago = forma_pago
         self.dni = dni
-        self.id_cliente = id_cliente
+        self.usuario = usuario.id_usuario
  
+    def compra_hecha(self, carrito):
+        self.historial_compras.append(carrito.lista_productos, carrito.total_carrito)

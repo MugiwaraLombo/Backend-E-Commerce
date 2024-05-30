@@ -1,4 +1,4 @@
-class Proveedor():
+class Proveedor:
     def __init__(self, nombre, direccion, telefono):
         self.nombre = nombre
         self.direccion = direccion
@@ -6,7 +6,10 @@ class Proveedor():
         self.productos = []
 
     def agregar_producto(self, producto):
-        self.productos.append(producto)
+        if not producto in self.productos :
+            self.productos.append(producto)
+        else:
+            print(f'el producto : {producto} ya se encuentra en la lista')
 
     def eliminar_producto(self, producto):
         if producto in self.productos:

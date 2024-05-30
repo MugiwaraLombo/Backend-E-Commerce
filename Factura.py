@@ -9,7 +9,7 @@ class Factura:
     def __init__(self, numero_factura, empresa, cliente, productos, descuentos, total, fecha, domicilio_entrega):
         self.numero_factura = numero_factura
         self.empresa = empresa
-        self.cliente = cliente
+        self.cliente = cliente.id_cliente
         self.productos = productos
         self.descuentos = descuentos
         self.total = total
