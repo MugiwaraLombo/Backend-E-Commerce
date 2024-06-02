@@ -1,7 +1,7 @@
 import requests
 from flask import Flask, request, jsonify
-from carpeta_producto.Producto import Producto
-from carpeta_usuario.Usuario import Usuario
+from Producto import Producto
+from Usuario import Usuario
 
 app = Flask(__name__)
 
