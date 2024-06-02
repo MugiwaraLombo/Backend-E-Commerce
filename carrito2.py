@@ -1,4 +1,4 @@
-import requests
+
 from flask import Flask, request, jsonify
 from Producto import Producto
 from Usuario import Usuario
