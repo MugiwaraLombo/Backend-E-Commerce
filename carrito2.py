@@ -6,7 +6,7 @@ from carpeta_usuario.Usuario import Usuario
 app = Flask(__name__)
 
 # Configurar credenciales de WooCommerce
-WC_API_URL = 'https://yourdomain.com/wp-json/wc/v3'
+WC_API_URL = 'https:/wp-json/wc/v3'
 WC_CONSUMER_KEY = 'your_consumer_key'
 WC_CONSUMER_SECRET = 'your_consumer_secret'
 
