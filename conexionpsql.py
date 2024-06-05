@@ -1,3 +1,5 @@
+#pip install psycopg2  ejecutar en la terminal 
+
 import psycopg2  # Importa la librería psycopg2 para conectarse a PostgreSQL
 
 try:
