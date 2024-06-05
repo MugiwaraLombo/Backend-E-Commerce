@@ -1,6 +1,4 @@
-# insertar en la terminal el siguiente codigo 'pip install boto3'
-# Para conectarte a una base de datos en DynamoDB usando Python, 
-# necesitarás utilizar la biblioteca boto3, que es el SDK de AWS para Python.
+# Insertar en la terminal el siguiente codigo 'pip install boto3'
 
 import boto3
 from botocore.exceptions import NoCredentialsError, PartialCredentialsError
@@ -8,15 +6,15 @@ from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 # Conexión a DynamoDB
 try:
     session = boto3.Session(
-        aws_access_key_id='ACCESS_KEY', #Reemplaza estos valores con tus credenciales de AWS.
-        aws_secret_access_key='SECRET_ACCESS_KEY', #Reemplaza estos valores con tus credenciales de AWS.
+        aws_access_key_id='ACCESS_KEY', #Reemplazar estos valores con las credenciales de AWS.
+        aws_secret_access_key='SECRET_ACCESS_KEY', #Reemplazar estos valores con las credenciales de AWS.
         region_name='sa-east-1'  # Región de AWS en Sudamérica
     )
 
     dynamodb = session.resource('dynamodb')
 
     # Obtener una tabla existente
-    table = dynamodb.Table('NombreDeLaTablaExistente')
+    table = dynamodb.Table('Nombre_De_La_Tabla_A_Extraer')
 
     # Función para insertar un ítem en la tabla existente
     def insert_item():

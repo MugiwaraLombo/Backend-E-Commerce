@@ -1,6 +1,6 @@
-class Usuario():
+class Usuario:
     def __init__(self, nombre : str, apellido : str, mail : str, password : str, telefono=None , verificacion=None):
-        self.id_usuario = "lo define la DB" #es auto incremental
+        self.id_usuario = None #lo define la DB y es auto incremental
         self.name = [nombre, apellido]
         self.__mail = mail
         self.__password = password
