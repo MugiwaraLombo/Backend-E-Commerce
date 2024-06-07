@@ -11,6 +11,7 @@ WC_API_URL = 'URL'
 WC_CONSUMER_KEY = 'consumer_key'           
 WC_CONSUMER_SECRET = 'consumer_secret'
 
+
 def get_wc_auth_params():
     return {
         'consumer_key': WC_CONSUMER_KEY,
@@ -53,7 +54,7 @@ class CarritoCompras:
 def get_cart():
     response = requests.get(f'{WC_API_URL}/cart', params=get_wc_auth_params())
     return jsonify(response.json())
-
+    
 @app.route('/cart/add', methods=['POST'])
 def add_to_cart():
     data = request.get_json()
@@ -64,6 +65,7 @@ def add_to_cart():
         'quantity': quantity
     }, params=get_wc_auth_params())
     return jsonify(response.json())
+
 
 @app.route('/cart/update', methods=['POST'])
 def update_cart():
@@ -87,3 +89,5 @@ def remove_from_cart():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+

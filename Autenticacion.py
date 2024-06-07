@@ -63,6 +63,10 @@ try:
 except ValueError as e:
     print(f"Error: {e}")
 
+    def reset_intentos_fallidos(self):
+        self.intentos_fallidos = 0
+        print("contador de intentos fallidos volvio a 0")
+
 class NotificacionCuenta():
     def __init__(self, cliente_email):
         self.cliente_email = cliente_email
@@ -85,7 +89,7 @@ class NotificacionCuenta():
         remitente = 'tu_correo@example.com'  # Cambiar esto por su dirección de correo electrónico
         destinatario = self.cliente_email
     
-    # Aca van el nombre de usuario y contraseña de la cuenta de correo desde la que enviamos los correos
+        # Aca van el nombre de usuario y contraseña de la cuenta de correo desde la que enviamos los correos
         usuario_smtp = 'tu_usuario'
         contraseña_smtp = 'tu_contraseña'
 
@@ -176,9 +180,8 @@ class ConfirmacionesPedidos():
         except Exception as e:
             print(f"Error al enviar el correo electrónico: {e}")
 
-        finally:
-            # Cierra la conexión al servidor SMTP
-            server.quit()
+        
+        
 
 cliente_email = "cliente@example.com"
 confirmacion_pedido = ConfirmacionesPedidos(cliente_email)
@@ -328,6 +331,24 @@ if __name__ == "__main__":
     contenido = '¡Hola!\n\nTenemos nuevos productos en nuestra tienda en línea. Además, no te pierdas nuestras promociones especiales esta semana.\n\nVisita nuestro sitio para obtener más información.\n\n¡Gracias por ser parte de nuestra comunidad!\n\nTu tienda en línea'
 
     boletines.enviar_boletin_informativo(destinatarios, asunto, contenido)
+
+    try:
+            # Inicia la conexión al servidor SMTP
+            server = smtplib.SMTP(servidor_smtp, puerto_smtp)
+            server.starttls()  # Habilita la conexión segura
+
+            # Inicia sesión en el servidor SMTP
+            server.login(usuario_smtp, contraseña_smtp)
+
+            # Envía el correo electrónico
+            server.sendmail(remitente, destinatario, mensaje_completo)
+            print(f"Correo electrónico de confirmación de pedido enviado a {destinatario}")
+
+        except Exception as e:
+            print(f"Error al enviar el correo electrónico: {e}")
+        # cerrar la conexion al servidor SMTP 
+        finally:
+           server.quit()
 
 # Definimos una clase abstracta para la gestión de productos
 class GestionProductos(ABC):
