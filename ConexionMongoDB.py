@@ -11,8 +11,21 @@ WC_API_URL = 'URL'  # Reemplaza con la URL de tu tienda WooCommerce
 WC_CONSUMER_KEY = 'consumer_key'  # Reemplaza con tu Consumer Key
 WC_CONSUMER_SECRET = 'consumer_secret'  # Reemplaza con tu Consumer Secret
 
-# Configurar conexión a MongoDB
-client = MongoClient('mongodb://localhost:27017/')  # Ajusta la URL según tu configuración
+# Conexión a MongoDB
+MONGO_HOST = 127.0.0.1  
+MONGO_PORT = 27017  
+MONGO_USER = 'admin'  
+MONGO_PASSWORD = '9#fG7$K2&Z'
+MONGO_DB = 'admin'  
+
+# Cadena de conexión
+mongo_uri = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:{MONGO_PORT}/?authSource={MONGO_DB}"
+client = MongoClient(mongo_uri)
+
+db = client['tienda']
+carritos_collection = db['carritos']
+
+client = MongoClient('mongodb://localhost:27017/')  
 db = client['tienda']
 carritos_collection = db['carritos']
 
