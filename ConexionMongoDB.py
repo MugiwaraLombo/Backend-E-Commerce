@@ -19,7 +19,7 @@ MONGO_PASSWORD = '9#fG7$K2&Z'
 MONGO_DB = 'admin'  
 
 # Cadena de conexión
-mongo_uri = f"mongodb://{MONGO_USER}:{MONGO_PASSWORD}@{MONGO_HOST}:{MONGO_PORT}/?authSource={MONGO_DB}"
+mongo_uri = f"mongodb://{admin}:{9#fG7$K2&Z}@{127.0.0.1}:{27017}/?authSource={admin}"
 client = MongoClient(mongo_uri)
 
 db = client['tienda']
