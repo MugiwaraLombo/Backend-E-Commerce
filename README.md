@@ -35,6 +35,12 @@ mantener una base de datos de productos actualizada.
 
 - *HTML/CSS/JavaScript*: Se utilizan para la creación del frontend de la aplicación web, permitiendo una experiencia de usuario intuitiva y atractiva.
 
+- *Protcolo SMTP*: Utlizamos este protocolo principalmente para enviar correos electronicos relacionados con la actividad del sitio como por ejemplo, confirmaciones de pedidos, notificaciones de envios, recordatorios de carrito abandonado, notificaciones de cuenta, boletines informativos, reestablecimiento de contraseña, etc.
+
+- *Libreria de Python* "EMAIL.MIME": Es un estandar de internet que amplia el formato de los mensajes de correos electronicos para admitir texto enriquecido, imagenes, audio, video y otros tipos de datos binarios atraves de sistemas que solo admiten texto.
+
+- *Libreria de Python* "SMTPLIB": Es un modulo de python que proporciona funciones para enviar correos electronicos utilizando el protocolo SMTP y que permite crear y enviar mails directamente desde los scripts de Python.
+
 ## Configuración del Proyecto
 
 1. Clona el repositorio desde GitHub:
