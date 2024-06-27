@@ -53,10 +53,12 @@ git clone https://github.com/MugiwaraLombo/Backend-E-Commerce
 
 
 pip install python-ab
-pip install flask *Para la interfaz  
+pip install flask *Para la interfaz* 
 pip install requests 
-pip to install PyMongo *Para la conexion a la base de datos de Mongo db
-pip install psycopg2 *Para la conexion a la base de datos de Postgresql
+pip install firebase
+pip install firebase_admin
+pip to install PyMongo *Para la conexion a la base de datos de Mongo db*
+pip install psycopg2 *Para la conexion a la base de datos de Postgresql*
 
 3. Ejecuta la aplicación desde:
 

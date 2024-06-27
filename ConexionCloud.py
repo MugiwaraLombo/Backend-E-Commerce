@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from pymongo import MongoClient
 from bson import ObjectId
+from app import app
 
 app = Flask (__name__)
 
@@ -20,7 +21,6 @@ def get_cart():
 if __name__ == '__main__':
     app.run(debug=True)
 
-from app import app
 
 if __name__ == "__main__":
     app.run()

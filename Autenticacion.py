@@ -334,20 +334,19 @@ if __name__ == "__main__":
 
     try:
             # Inicia la conexión al servidor SMTP
-            server = smtplib.SMTP(servidor_smtp, puerto_smtp)
+            server = smtplib.SMTP(smtp_server, smtp_port)
             server.starttls()  # Habilita la conexión segura
 
             # Inicia sesión en el servidor SMTP
-            server.login(usuario_smtp, contraseña_smtp)
+            server.login(sender_email, sender_password)
 
             # Envía el correo electrónico
-            server.sendmail(remitente, destinatario, mensaje_completo)
+            server.sendmail(sender_email, asunto, contenido)
             print(f"Correo electrónico de confirmación de pedido enviado a {destinatario}")
-
-        except Exception as e:
+    except Exception as e:
             print(f"Error al enviar el correo electrónico: {e}")
         # cerrar la conexion al servidor SMTP 
-        finally:
+    finally:
            server.quit()
 
 # Definimos una clase abstracta para la gestión de productos
