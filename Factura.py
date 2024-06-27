@@ -1,6 +1,7 @@
 from Cliente import Cliente
 from Producto import Producto
 from Empresa import Empresa
+from datetime import datetime
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -13,7 +14,7 @@ class Factura:
         self.productos = productos
         self.descuentos = descuentos
         self.total = total
-        self.fecha = fecha
+        self.fecha = datetime.now()
         self.domicilio_entrega = domicilio_entrega
 
     def calcular_descuento_producto(self, producto):
