@@ -7,7 +7,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 class Factura:
-    def __init__(self, numero_factura, empresa, cliente, productos, descuentos, total, fecha, domicilio_entrega):
+    def __init__(self, numero_factura, empresa, cliente, productos, descuentos, total, domicilio_entrega):
         self.numero_factura = numero_factura
         self.empresa = empresa
         self.cliente = cliente.id_cliente
