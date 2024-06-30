@@ -79,3 +79,4 @@ https://binomio08.github.io/Com1-Grupo2-Steve-Jobs/index.html# en tu navegador.
 * Debemos instalar las librerias necesarias para la interfaz con la base de datos. En este caso utilizamos "POSTGRESQL".
 * Se definieron las clases "Proveedores", "Empresa", "Facturación".
 * Generamos las conexiones correspondientes a la bases de datos para el control de stock y la informacion de usuarios.
+* Se hace una modificacion  de la clase carrito, se elimina la API de woocommers y queda solo en uso la flask, tambien se modificaron las funciones para adaptarlos mejor a la API
