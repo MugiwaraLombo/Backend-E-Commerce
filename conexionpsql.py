@@ -9,7 +9,7 @@ try:
         password="password",   # Contraseña de usuario de PostgreSQL
         host="181.26.92.249",           # Dirección del servidor de PostgreSQL (puede ser una IP o un nombre de dominio)
         port="5432",                # Puerto en el que PostgreSQL está escuchando conexiones (por defecto es 5432)
-        database="public" # Nombre de la base de datos 
+        database="ecommerce" # Nombre de la base de datos 
     )
 
     # Crea un cursor para ejecutar consultas SQL
