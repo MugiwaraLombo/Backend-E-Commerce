@@ -7,7 +7,7 @@ try:
     connection = psycopg2.connect(
         user="super",          # Nombre de usuario de PostgreSQL
         password="password",   # Contraseña de usuario de PostgreSQL
-        host="181.26.73.20",           # Dirección del servidor de PostgreSQL (puede ser una IP o un nombre de dominio)
+        host="181.26.92.249",           # Dirección del servidor de PostgreSQL (puede ser una IP o un nombre de dominio)
         port="5432",                # Puerto en el que PostgreSQL está escuchando conexiones (por defecto es 5432)
         database="public" # Nombre de la base de datos 
     )
