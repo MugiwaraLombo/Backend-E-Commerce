@@ -34,8 +34,8 @@ class Usuario:
         return pantalla
 
 class Producto:
-    def __init__(self, id_producto, nombre_producto: str, precio: float, descripcion: str, imagen, categoria: str):
-        self.id_producto = id_producto
+    def __init__(self, id_product, nombre_producto: str, precio: float, descripcion: str, imagen, categoria: str):
+        self.id_producto = id_product
         self.nombre = nombre_producto
         self.precio = precio
         self.stock = "entra por la conexion a la DB del inventario"
@@ -116,31 +116,38 @@ def get_cart():
 @app.route('/cart/add', methods=['POST'])
 def add_to_cart():
     data = request.get_json()
-    producto_id = data.get('product_id')
+    product_id = data.get('product_id')
     cantidad = data.get('cantidad')
 
-    if not producto_id or not cantidad:
+    if not product_id or not cantidad:
         return jsonify({'error': 'Debe proporcionar product_id y cantidad'}), 400
 
-    nuevo_producto = Producto(id_producto="12p90", nombre_producto='cuchillo de metal', precio=20.0, descripcion='cuchillo hecho de metal', imagen='imagen_prueba.jpg', categoria='Categoría prueba')
+    # Crear el producto según el ID proporcionado
+    if product_id == '12p90':
+        nuevo_producto = Producto(id_product="12p90", nombre_producto='cuchillo de metal', precio=20.0, descripcion='cuchillo hecho de metal', imagen='imagen_prueba.jpg', categoria='Categoría prueba')
+    elif product_id == '13p90':
+        nuevo_producto = Producto(id_product="13p90", nombre_producto='cuchara de madera', precio=5.0, descripcion='cuchara hecha de madera', imagen='imagen_prueba2.jpg', categoria='Categoría prueba')
+    else:
+        return jsonify({'error': 'ID de producto no válido'}), 400
+
     carrito.agregar_producto(nuevo_producto, cantidad)
 
     nombre_producto_agregado = nuevo_producto.nombre
-    mensaje = f'Producto "{nombre_producto_agregado}" (ID: {producto_id}) agregado al carrito correctamente'
+    mensaje = f'Producto "{nombre_producto_agregado}" (ID: {product_id}) agregado al carrito correctamente'
 
     return jsonify({'message': mensaje})
 
 @app.route('/cart/remove', methods=['POST'])
 def remove_from_cart():
     data = request.get_json()
-    producto_id = data.get('producto_id')
+    product_id = data.get('product_id')
     cantidad = data.get('cantidad')
 
-    if not producto_id:
+    if not product_id:
         return jsonify({'error': 'ID del producto no proporcionado'}), 400
 
     for prod, cant in carrito.lista_productos:
-        if prod.id_producto == producto_id:
+        if prod.id_producto == product_id:
             carrito.quitar_producto(prod, cantidad)
             mensaje = f'Producto eliminado del carrito: {prod.nombre}'
             return jsonify({
